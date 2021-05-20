@@ -1,0 +1,15 @@
+{
+  "domain": "kevo",
+  "name": "Kevo",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/kevo",
+  "requirements":  ["beautifulsoup4==4.5.1", "requests==2.20.0"],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@Noglen"
+  ],
+  "iot_class": "cloud_push"
+}
