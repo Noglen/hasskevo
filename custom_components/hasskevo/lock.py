@@ -83,8 +83,10 @@ class KevoLock(LockEntity):
         return self._state == STATE_LOCKED
 
     def state_changed(self, newState):
-        self._state = self.states[newState["messageData"]["boltState"]]
-        self.async_write_ha_state()
+        
+        if newState["messageData"]["lockId"] == self._lockID:
+            self._state = self.states[newState["messageData"]["boltState"]]
+            self.async_write_ha_state()
 
     async def async_lock(self, **kwargs):
         """Instruct the lock to lock."""
